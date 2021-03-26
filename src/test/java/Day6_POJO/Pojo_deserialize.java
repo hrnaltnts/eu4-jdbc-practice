@@ -16,7 +16,8 @@ public class Pojo_deserialize {
     public void oneSpartanPojo(){
         Response response = given().accept(ContentType.JSON)
                 .pathParam("id", 15)
-                .when().get("http://52.55.102.92:8000/api/spartans/{id}");
+                .when().get("http://34.228.41.120:8000/api/spartans/{id}");
+
 
         assertEquals(response.statusCode(),200);
 
@@ -39,7 +40,7 @@ public class Pojo_deserialize {
     @Test
     public void regionToPojo(){
 
-        Response response = when().get("http://52.55.102.92:1000/ords/hr/regions");
+        Response response = when().get("http://34.228.41.120:1000/ords/hr/regions");
 
         assertEquals(response.statusCode(),200);
 

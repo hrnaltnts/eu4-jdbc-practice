@@ -58,7 +58,7 @@ public class PostRequestDemo {
                 .post("/api/spartans");
 
         response.prettyPrint();
-        //verify status code 201 for post
+                //verify status code 201 for post
         assertEquals(response.statusCode(),201);
 
         //verify content type
@@ -73,6 +73,15 @@ public class PostRequestDemo {
         // assertEquals(response.path("success"),"A Spartan is Born!");
 
         //assertion for spartan data
+        //{
+        //    "success": "A Spartan is Born!",
+        //    "data": {
+        //        "id": 2177,
+        //        "name": "MikeSmith",
+        //        "gender": "Male",
+        //        "phone": 8877445596
+        //    }
+        //}
         String name = response.path("data.name");
         String gender = response.path("data.gender");
         long phone = response.path("data.phone");

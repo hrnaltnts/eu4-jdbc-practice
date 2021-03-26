@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Item {
 
-    @SerializedName("region_id")
+    @SerializedName("region_id")//it should be same name with your json
     @Expose
     private Integer regionId;
     @SerializedName("region_name")

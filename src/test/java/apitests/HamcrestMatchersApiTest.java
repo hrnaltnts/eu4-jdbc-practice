@@ -38,7 +38,19 @@ public class HamcrestMatchersApiTest {
     public void teacherData(){
         given().accept(ContentType.JSON)
                 .and().pathParam("id",8261)
-        .when().log().all().get("http://api.cybertektraining.com/teacher/{id}")
+        .when().log().all()
+                //Request method:	GET
+                //Request URI:	http://api.cybertektraining.com/teacher/8261
+                //Proxy:			<none>
+                //Request params:	<none>
+                //Query params:	<none>
+                //Form params:	<none>
+                //Path params:	id=8261
+                //Headers:		Accept=application/json, application/javascript, text/javascript, text/json
+                //Cookies:		<none>
+                //Multiparts:		<none>
+                //Body:			<none>
+                .get("http://api.cybertektraining.com/teacher/{id}")
                 .then().statusCode(200)
                 .and().contentType(equalTo("application/json;charset=UTF-8"))
                 .and().header("Content-Length",equalTo("240"))
@@ -49,8 +61,15 @@ public class HamcrestMatchersApiTest {
                 .and().assertThat().body("teachers.firstName[0]",equalTo("James"),
                         "teachers.lastName[0]",equalTo("Bond"),
                                                 "teachers.gender[0]",equalTo("Male"))
-          .log().all()
-                ;
+          .log().all();
+        //Date: Sun, 14 Mar 2021 22:30:03 GMT
+        //Server: Apache/2.4.38 (Amazon) OpenSSL/1.0.2k-fips
+        //Content-Type: application/json;charset=UTF-8
+        //Vary: Accept-Encoding
+        //Content-Encoding: gzip
+        //Content-Length: 240
+        //Keep-Alive: timeout=60, max=100
+        //Connection: Keep-Alive
 
     }
 
